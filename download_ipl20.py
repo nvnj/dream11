@@ -135,11 +135,11 @@ def update_ipl20_master(year):
     }
     response = requests.get(ipl20_schedule_url, headers=headers)
     data = json.loads(response.text)
-    print(data)
+    #print(data)
     match_summary_ipl20 = pd.DataFrame(
         columns=['matchid', 'date', 'year', 'city', 'venue', 'team1', 'team2', 'result', 'tossdecision', 'winner',
                  'by_what', 'by_how_many', 'mom'])
-    print("data", data)
+    #print("data", data)
     for match_details in data['content']['matchEvents']:
         dict = {}
         matchid = match_details['id']

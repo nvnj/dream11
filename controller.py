@@ -90,7 +90,7 @@ if __name__ == "__main__":
                   'total_bat_points_venue_avg10', 'total_bowl_points_venue_avg10', 'total_points_playername_avg10',
                   ]
 
-    cat_cols = ['playing_team', 'playing_role', 'opposition_team', 'city']
+    cat_cols = ['playing_team',  'opposition_team','playing_role', 'city']
     target_col = 'total_points'
     pred_col = 'pred_points'
 
@@ -144,7 +144,7 @@ if __name__ == "__main__":
     # Change the below to true to run the training for an ensemble model using predicitons from other model
     PREDICT_ENSEMBLE = True
     # Change the below to true to create the dataframe of the upcoming match and adjust anything if required
-    SELECT_PLAYING_SQUAD = False
+    SELECT_PLAYING_SQUAD = True
     # Change the below to true if the squad file is ready at predfeaturepath to run prediction for the team
     SELECT_CURRENT_TEAM = False
     # Change this to True if the current playing XI is available

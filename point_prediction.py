@@ -161,6 +161,7 @@ class ModelTrain:
             self.define_catboost_model_params()
             model = self.cat1
             model_grid = self.cat_grid
+            print('Model selected is not available')
         else:
             print('Model selected is not available')
             return
