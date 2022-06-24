@@ -169,6 +169,8 @@ class FeatEngineering:
             self.ipl_features['opposition_team'] = np.where(pd.isnull(self.ipl_features['batsmen_innings']), self.ipl_features['bowler_battingteam'], self.ipl_features['batsmen_bowlingteam'])
             self.ipl_features[['playing_team', 'opposition_team']].replace({'Delhi Daredevils': 'Delhi Capitals', 'Rising Pune Supergiants': 'Pune Warriors',
                                                                         'Rising Pune Supergiant': 'Pune Warriors', 'Deccan Chargers': 'Sunrisers Hyderabad'}, inplace=True)
+        # if "city" not in self.ipl_features.columns:
+        #     self.ipl_features['playing_team'] = np.where(pd.isnull(self.ipl_features['batsmen_innings']), self.ipl_features['bowler_bowlingteam'], self.ipl_features['batsmen_battingteam'])
 
         return
 

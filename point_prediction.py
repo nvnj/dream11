@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 from xgboost.sklearn import XGBRegressor
-from catboost import CatBoostRegressor
+from catboost import CatBoostRegressor, Pool
 from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import StandardScaler
@@ -141,10 +141,19 @@ class ModelTrain:
         """
         start = time.time()
         X = self.train_data[self.predictors]
+        print(X.dtypes)
         y = self.train_data[self.target_col]
 
         X_test = self.test_data[self.predictors]
         y_test = self.test_data[self.target_col]
+
+        # for col in X.select_dtypes(include=['object']):
+        #     X[col] = X[col].astype('string')
+        print(X.dtypes)
+        print(X.isnull().sum())
+
+        # pool_train = Pool(X, y,cat_features=self.cat_cols)
+        # pool_test = Pool(X_test, cat_features=self.cat_cols)
 
 
         if model == 'xgb':
@@ -165,9 +174,10 @@ class ModelTrain:
             print('Model selected is not available')
             return
         print("test Shape", X_test.shape)
-        model_grid.fit(X, y, eval_set=(X_test, y_test))
+        print(X.columns.tolist())
+        model_grid.fit(X,y, eval_set=(X_test, y_test))
         model.set_params(**model_grid.best_params_)
-        model.fit(X, y, eval_set=(X_test, y_test))
+        model.fit(X,y, eval_set=(X_test, y_test))
         print(model_grid.best_score_)
         print(model_grid.best_params_)
         self.feat_imp_df = pd.DataFrame(zip(self.predictors, model_grid.best_estimator_.feature_importances_), columns=['feature_name', 'feature_importance'])

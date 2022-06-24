@@ -68,7 +68,7 @@ def execute_model_train(datapath,modelname, predictors, cat_cols, target_col, us
         masterdf = pd.merge(masterdf, ts_prediction, left_index=True, right_index=True, how='left')
         masterdf.to_csv(r'Data\time_series_output.csv', index=False)
         predictors = predictors + ['ts_pred_points']
-    if modelname == 'movingaverate':
+    if modelname == 'movingaverage':
         return
     modeltrain = ModelTrain(masterdf, target_col, predictors, cat_cols, modelname)
     modeltrain.get_normalized_data()
@@ -287,7 +287,8 @@ def get_team_details(datapath,index =0):
     tz_dubai = pytz.timezone('Asia/Dubai')
     datetime_dubai = datetime.now(tz_dubai)
     matchsummary = pd.read_csv(datapath['matchsummarypathipl20'])
-    matchid = matchsummary.iloc[next(x[0] for x in enumerate(pd.to_datetime(matchsummary['date']).tolist()) if x[1] > datetime_dubai), 0]
+    #matchid = matchsummary.iloc[next(x[0] for x in enumerate(pd.to_datetime(matchsummary['date']).tolist()) if x[1] > datetime_dubai), 0]
+    matchid = 1216519
 
     today_match = matchsummary[matchsummary['matchid'] == matchid]
     print(today_match)

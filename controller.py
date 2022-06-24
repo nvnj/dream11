@@ -1,10 +1,9 @@
 import pandas as pd
 from main import *
-from send_email import send_email_team
 from point_prediction import EnsembleModel
 
 if __name__ == "__main__":
-    # reading the source file from local
+
     matchdatapath = r'Data/matchdata.csv'
     matchsummarypath = r'Data/matchsummary.csv'
     # points as per dream11 website
@@ -88,7 +87,7 @@ if __name__ == "__main__":
     target_col = 'total_points'
     pred_col = 'pred_points'
 
-    modelname = 'catboost'  # Options include 'rf','xgb','catboost','movingaverage', 'ensemble'
+    modelname = 'rf'  # Options include 'rf','xgb','catboost','movingaverage', 'ensemble'
     matchdatascorecardpath = r'Data/ipl_scorecard_points.csv'
     matchdatascorecardpathipl20 = r'ipl20/ipl_scorecard_points_ipl20.csv'
     featenggpath = r'Data/ipl_scorecard_points_featengg.csv'
@@ -132,29 +131,23 @@ if __name__ == "__main__":
                 "rewardspath": rewardspath,
                 'yearlrewardspath': yearlyrewardspath}
 
-    # Change the below to true to run the training of the models part of the permissible list
+    #  to run the training of the models part of the permissible list
     TRAIN_MODEL = False
-    # Change the below to true to run the prediction on the entire training dataset we have
-    PREDICT_MODEL = False
-    # Change the below to true to run the training for an ensemble model using predicitons from other model
+    # e to run the prediction on the entire training dataset we have
+    PREDICT_MODEL = True
+    #  to run the training for an ensemble model using predicitons from other model
     PREDICT_ENSEMBLE = False
-    # Change the below to true to create the dataframe of the upcoming match and adjust anything if required
-    SELECT_PLAYING_SQUAD = True
-    # Change the below to true if the squad file is ready at predfeaturepath to run prediction for the team
-    SELECT_CURRENT_TEAM = True
-    # Change this to True if the current playing XI is available
-    SELECT_FROM_PLAYING_XI = True
-    # Change this to true to send email if the file fo next match is present at nextmatchteampath
-    SEND_EMAIL = True
-    sender_email = "abhishek.anand374@gmail.com"
-    # add more emails to this by using "," seperator
-    receiver_email = "madhavgoswami93@gmail.com," + "sainiabhi7734@gmail.com," + "rapidnehal@gmail.com," + "sandeepch@zeta.tech," + "mandalravi04@gmail.com," + "vikashkumar72741234@gmail.com"
-    # config dor send_email
+    #  to create the dataframe of the upcoming match and adjust anything if required
+    SELECT_PLAYING_SQUAD = False
+    #  if the squad file is ready at predfeaturepath to run prediction for the team
+    SELECT_CURRENT_TEAM = False
+    #  if the current playing XI is available
+    SELECT_FROM_PLAYING_XI = False
+
     modelnamelist = ['xgb', 'catboost', 'rf', 'movingaverage']
-    #modelnamelist = ['catboost']
-    # Run the below function to train the model
+    # function to train the model
     if TRAIN_MODEL:
-        execute_get_scorecard(datapath, pointsconfig)  # Run the function to to get points in the scorecard format
+        execute_get_scorecard( matchdatapath,datapath['matchdatascorecardpath'], pointsconfig)  # Run the function to to get points in the scorecard format
         execute_featureengg(datapath['matchdatascorecardpath'], datapath['matchsummarypath'], datapath['featenggpath'], colconfig)  # Run the function to create features
         execute_model_train(datapath, modelname, predictors, cat_cols, target_col, usetimeseries=False)  # Run the function to build the model
 
@@ -196,7 +189,7 @@ if __name__ == "__main__":
     if SELECT_PLAYING_SQUAD:
         # run this to update the master
         print("updating the masterdata")
-        update_master_data(datapath, pointsconfig)
+        #update_master_data(datapath, pointsconfig)
         # Change the values of team1, team2, city and venue depending on the match
         print("creating pred features dataframe")
         create_pred_dataframe_before_playing_XI(datapath, colconfig, TEAM1, TEAM2, CITY, VENUE, toss_winner=TEAM1)
@@ -206,7 +199,7 @@ if __name__ == "__main__":
         finalteam = pd.DataFrame()
         predcol_list = []
         print("Calculation for best XI started")
-        for modelname in ['catboost', 'xgb', 'rf', 'movingaverage', 'ensemble']: # Keep ensemble in the end
+        for modelname in ['catboost', 'xgb', 'rf', 'movingaverage', 'ensemble']:
             modelpath = r"Data/" + modelname + "_model.pkl"
             encoderpath = r"Data/OnHotEncoder_" + modelname + ".pkl"
             datapath['modelpath'] = modelpath
@@ -216,20 +209,19 @@ if __name__ == "__main__":
             else:
                 execute_model_prediction(datapath, predictors, modelname, cat_cols, pred_col, usetimeseries=False, predpath=True)
             teamtemp = execute_team_selection(datapath, constconfig, colconfig).team_points
-            print("teamtemp1", teamtemp.iloc[:, 13:15])
+            #print("teamtemp1", teamtemp.iloc[:, 13:15])
             teamtemp.sort_values(by=['matchid', 'pred_selection_true', 'pred_points', 'playername'], inplace=True, ascending=False)
             teamtemp.rename(columns={'pred_points': 'pred_points' + '_' + modelname, 'pred_selection_true': 'pred_selection_true' + '_' + modelname}, inplace=True)
             teamtemp = teamtemp[['matchid', 'playername', 'playing_role', 'playing_team', 'playercost', 'pred_points' + '_' + modelname, 'pred_selection_true' + '_' + modelname]]
-            print("teamtemp2", teamtemp.iloc[:, 4:6])
+            #print("teamtemp2", teamtemp.iloc[:, 4:6])
             predcol_list.append('pred_points' + '_' + modelname)
             if finalteam.shape[0] == 0:
                 finalteam = teamtemp
             else:
                 finalteam = pd.merge(finalteam, teamtemp, on=['matchid','playername', 'playing_role', 'playing_team','playercost'], how='left')
 
-        finalteam.to_csv(r'C:\Users\40100147\PycharmProjects\dream11\Data\pred_team11_details.csv',index =False)
+        finalteam.to_csv(r'Data\pred_team11_details.csv',index =False)
         finalteam = formatdata(finalteam)
         finalteam.to_csv(nextmatchteampath, index=False)
-    if SEND_EMAIL:
-        send_email_team(TEAM1, TEAM2, nextmatchteampath,sender_email,receiver_email )
+
 
