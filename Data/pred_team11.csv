@@ -1,37 +1,30 @@
-playername,teamname,playingrole,playercost,model1_points,model1_team,model2_points,model2_team
-AB de Villiers,Royal Challengers Bangalore,Batsmen,10.0,51.0,1.0,72.0,1.0
-RR Pant,Delhi Capitals,Batsmen,9.5,50.0,1.0,56.0,1.0
-SS Iyer,Delhi Capitals,Batsmen,9.0,47.0,1.0,53.0,1.0
-PP Shaw,Delhi Capitals,Batsmen,8.5,44.0,1.0,37.0,
-AJ Finch,Royal Challengers Bangalore,Batsmen,8.5,42.0,1.0,41.0,
-S Dhawan,Delhi Capitals,Batsmen,10.0,41.0,1.0,35.0,
-MP Stoinis,Delhi Capitals,AllRounder,8.5,37.0,1.0,42.0,
-PA Patel,Royal Challengers Bangalore,Batsmen,8.5,37.0,1.0,41.0,
-I Sharma,Delhi Capitals,Bowler,8.5,26.0,1.0,53.0,
-HV Patel,Delhi Capitals,Bowler,8.0,25.0,1.0,51.0,
-A Zampa,Royal Challengers Bangalore,Bowler,8.5,24.0,1.0,45.0,
-V Kohli,Royal Challengers Bangalore,Batsmen,10.5,36.0,,35.0,
-MM Ali,Royal Challengers Bangalore,AllRounder,8.0,34.0,,56.0,
-SO Hetmyer,Delhi Capitals,Batsmen,8.5,32.0,,25.0,
-KMA Paul,Delhi Capitals,AllRounder,8.0,32.0,,50.0,
-CH Morris,Royal Challengers Bangalore,AllRounder,9.5,30.0,,61.0,1.0
-Devdutt Padikkal,Royal Challengers Bangalore,Batsmen,9.0,29.0,,34.0,
-A Rahane,Delhi Capitals,Batsmen,9.0,27.0,,,
-A Carey,Delhi Capitals,Batsmen,8.5,27.0,,,
-Washington Sundar,Royal Challengers Bangalore,AllRounder,8.5,27.0,,39.0,
-S Dube,Royal Challengers Bangalore,AllRounder,8.0,26.0,,38.0,
-S Lamichhane,Delhi Capitals,Bowler,8.5,23.0,,44.0,
-P Negi,Royal Challengers Bangalore,Bowler,8.0,22.0,,39.0,
-A Khan,Delhi Capitals,Bowler,8.0,21.0,,,
-R Ashwin,Delhi Capitals,Bowler,9.0,21.0,,44.0,
-A Nortje,Delhi Capitals,Bowler,8.0,21.0,,,
-M Siraj,Royal Challengers Bangalore,Bowler,8.0,21.0,,,
-I Udana,Royal Challengers Bangalore,Bowler,8.0,20.0,,,
-MM Sharma,Delhi Capitals,Bowler,8.0,14.0,,57.0,
-AR Patel,Delhi Capitals,AllRounder,8.5,14.0,,67.0,1.0
-A Mishra,Delhi Capitals,Bowler,8.5,6.0,,78.0,1.0
-K Rabada,Delhi Capitals,Bowler,9.5,5.0,,82.0,1.0
-DW Steyn,Royal Challengers Bangalore,Bowler,8.5,4.0,,78.0,1.0
-YS Chahal,Royal Challengers Bangalore,Bowler,9.0,3.0,,84.0,1.0
-UT Yadav,Royal Challengers Bangalore,Bowler,8.5,1.0,,87.0,1.0
-NA Saini,Royal Challengers Bangalore,Bowler,8.0,1.0,,87.0,1.0
+playername,teamname,playingrole,playercost,points,team
+F du Plessis,Chennai Super Kings,Batsmen,9.0,56.0,1.0
+N Rana,Kolkata Knight Riders,Batsmen,10.0,42.0,1.0
+Shubman Gill,Kolkata Knight Riders,Batsmen,10.0,42.0,1.0
+AT Rayudu,Chennai Super Kings,Batsmen,9.0,40.0,1.0
+M Vijay,Chennai Super Kings,Batsmen,8.5,39.0,1.0
+KD Karthik,Kolkata Knight Riders,Batsmen,10.0,36.0,1.0
+EJG Morgan,Kolkata Knight Riders,Batsmen,10.0,36.0,1.0
+MJ Santner,Chennai Super Kings,AllRounder,8.5,32.0,1.0
+L Ngidi,Chennai Super Kings,Bowler,8.5,29.0,1.0
+KV Sharma,Chennai Super Kings,Bowler,8.0,25.0,1.0
+SN Thakur,Chennai Super Kings,Bowler,8.5,21.0,1.0
+SR Watson,Chennai Super Kings,AllRounder,9.5,46.0,
+SK Raina,Chennai Super Kings,Batsmen,10.0,39.0,
+MS Dhoni,Chennai Super Kings,Batsmen,9.5,39.0,
+AD Russell,Kolkata Knight Riders,Batsmen,10.0,34.0,
+Imran Tahir,Chennai Super Kings,Bowler,9.5,33.0,
+KM Jadhav,Chennai Super Kings,Batsmen,8.5,32.0,
+PJ Cummins,Kolkata Knight Riders,Batsmen,10.0,31.0,
+NS Naik,Kolkata Knight Riders,Batsmen,10.0,27.0,
+Harbhajan Singh,Chennai Super Kings,Bowler,10.0,26.0,
+SP Narine,Kolkata Knight Riders,Batsmen,10.0,26.0,
+DJ Bravo,Chennai Super Kings,AllRounder,10.0,26.0,
+Shivam Mavi,Kolkata Knight Riders,Batsmen,10.0,24.0,
+RA Jadeja,Chennai Super Kings,AllRounder,8.5,22.0,
+Sandeep Warrier,Kolkata Knight Riders,Bowler,10.0,21.0,
+SM Curran,Chennai Super Kings,AllRounder,8.5,16.0,
+Kuldeep Yadav,Kolkata Knight Riders,Batsmen,10.0,8.0,
+PP Chawla,Chennai Super Kings,Bowler,8.5,2.0,
+DL Chahar,Chennai Super Kings,Bowler,8.5,2.0,

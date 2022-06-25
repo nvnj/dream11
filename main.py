@@ -155,7 +155,7 @@ def execute_rewards_calcualtion(datapath, constconfig, colconfig, rewardconfig):
     # calculating a yearly summary of the model
     yearly_summary = ipl_team_rewards.get_rewards_summary()
     yearly_summary.to_csv(datapath['yearlrewardspath'], index=False)
-    print(ipl_team_rewards.total_match_points['rewards_earned'].sum())
+    #print(ipl_team_rewards.total_match_points['rewards_earned'].sum())
 
 
 def create_pred_dataframe_before_playing_XI(datapath, colconfig, team1, team2, city, venue, toss_winner):
@@ -230,10 +230,10 @@ def formatdata(finaloutdf):
     :return:
     """
 
-    finaloutdf = finaloutdf[['playername','playing_team','playing_role','playercost','pred_points_catboost','pred_selection_true_catboost','pred_points_ensemble','pred_selection_true_ensemble']]
-    finaloutdf.columns = ['playername','teamname','playingrole','playercost','model1_points','model1_team','model2_points','model2_team']
-    finaloutdf['model1_points'] = finaloutdf['model1_points'].apply(lambda x: round(x, 0))
-    finaloutdf['model2_points'] = finaloutdf['model2_points'].apply(lambda x: round(x, 0))
+    finaloutdf = finaloutdf[['playername','playing_team','playing_role','playercost','pred_points_catboost','pred_selection_true_catboost']]
+    finaloutdf.columns = ['playername','teamname','playingrole','playercost','points','team',]
+    finaloutdf.loc[:,('points')] = finaloutdf['points'].apply(lambda x: round(x, 0))
+    #finaloutdf['model2_points'] = finaloutdf['model2_points'].apply(lambda x: round(x, 0))
     return finaloutdf
 
 def update_master_data(datapath,pointsconfig):
@@ -288,7 +288,7 @@ def get_team_details(datapath,index =0):
     datetime_dubai = datetime.now(tz_dubai)
     matchsummary = pd.read_csv(datapath['matchsummarypathipl20'])
     #matchid = matchsummary.iloc[next(x[0] for x in enumerate(pd.to_datetime(matchsummary['date']).tolist()) if x[1] > datetime_dubai), 0]
-    matchid = 1216519
+    matchid = 1216536
 
     today_match = matchsummary[matchsummary['matchid'] == matchid]
     print(today_match)

@@ -136,7 +136,7 @@ class RewardEstimate:
         total_match_points = total_match_points.merge(count_player_selected, left_index=True, right_index=True, how='left')
         total_match_points = total_match_points.reset_index()
         total_match_points['error'] = np.where(total_match_points['pred_selection_cnt'] >= minplayercount,
-                                                  (total_match_points['actual_points_player'] - total_match_points['pred_points_player'])/total_match_points['actual_points_player'], np.nan)
+                                               ((total_match_points['actual_points_player'] - total_match_points['pred_points_player'])/total_match_points['actual_points_player']), np.nan)
         self.total_match_points = total_match_points
 
         return

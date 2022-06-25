@@ -26,6 +26,7 @@ class ModelTrain:
         self.predictors = predictors
         self.modelname = modelname
         return
+
     def get_test_train(self, split_col=None, split_value=None):
         """
 
@@ -81,11 +82,11 @@ class ModelTrain:
                       'lambda': [0.01, 0.5, 1, 2],
                       'seed': [1]}
         self.xgb_grid = RandomizedSearchCV(self.xgb1,
-                                parameters,
-                                cv=4,
-                                n_jobs=4,
-                                verbose=True,
-                                n_iter=100)
+                                           parameters,
+                                           cv=4,
+                                           n_jobs=4,
+                                           verbose=True,
+                                           n_iter=100)
         return
 
     def define_random_forest_model(self):
@@ -103,17 +104,17 @@ class ModelTrain:
                       'random_state': [1]}
         self.rf = RandomForestRegressor()
         self.rf_grid = RandomizedSearchCV(self.rf,
-                                     parameters,
-                                     cv=4,
-                                     n_jobs=4,
-                                     verbose=True,
-                                     n_iter=100)
-    
+                                          parameters,
+                                          cv=4,
+                                          n_jobs=4,
+                                          verbose=True,
+                                          n_iter=100)
+
     def define_catboost_model_params(self):
         self.cat1 = CatBoostRegressor()
 
         parameters = {'loss_function': ['RMSE'],
-                      'depth': [4, 6, 8],
+                      'depth': [4, 6, 8, 10],
                       'cat_features': [self.cat_features_catboost],
                       'learning_rate': [0.01, 0.05, 0.1],
                       'iterations': [30, 100, 300, 1000],
@@ -122,19 +123,21 @@ class ModelTrain:
                       'random_strength': [1],
                       'od_type': ['IncToDec'],
                       'random_seed': [1],
+                      #'task_type': ['GPU'],
                       'use_best_model': [True]}
 
-
         self.cat_grid = GridSearchCV(estimator=self.cat1,
-                                param_grid=parameters,
-                                cv=4,
-                                n_jobs=4,
-                                verbose=False)
+                                     param_grid=parameters,
+                                     cv=4,
+                                     n_jobs=4,
+                                     verbose=False)
+        # print("\n The best estimator across ALL searched params:\n", self.cat_grid.best_estimator_)
+        # print("\n The best score across ALL searched params:\n", self.cat_grid.best_score_)
+        # print("\n The best parameters across ALL searched params:\n", self.cat_grid.best_params_)
 
         return
 
-
-    def train_model(self,model):
+    def train_model(self, model):
         """
 
         :return:
@@ -149,12 +152,11 @@ class ModelTrain:
 
         # for col in X.select_dtypes(include=['object']):
         #     X[col] = X[col].astype('string')
-        print(X.dtypes)
-        print(X.isnull().sum())
+        # print(X.dtypes)
+        # print(X.isnull().sum())
 
         # pool_train = Pool(X, y,cat_features=self.cat_cols)
         # pool_test = Pool(X_test, cat_features=self.cat_cols)
-
 
         if model == 'xgb':
             self.define_xgb_model_params()
@@ -175,19 +177,22 @@ class ModelTrain:
             return
         print("test Shape", X_test.shape)
         print(X.columns.tolist())
-        model_grid.fit(X,y, eval_set=(X_test, y_test))
+        model_grid.fit(X, y, eval_set=(X_test, y_test))
+        print("\n The best estimator across ALL searched params:\n", self.cat_grid.best_estimator_)
+        print("\n The best score across ALL searched params:\n", self.cat_grid.best_score_)
+        print("\n The best parameters across ALL searched params:\n", self.cat_grid.best_params_)
         model.set_params(**model_grid.best_params_)
-        model.fit(X,y, eval_set=(X_test, y_test))
+        model.fit(X, y, eval_set=(X_test, y_test))
         print(model_grid.best_score_)
         print(model_grid.best_params_)
-        self.feat_imp_df = pd.DataFrame(zip(self.predictors, model_grid.best_estimator_.feature_importances_), columns=['feature_name', 'feature_importance'])
+        self.feat_imp_df = pd.DataFrame(zip(self.predictors, model_grid.best_estimator_.feature_importances_),
+                                        columns=['feature_name', 'feature_importance'])
         print(self.feat_imp_df)
         end = time.time()
         # total time taken
-        print(f"Runtime of the program is {(end - start)/60} mins")
+        print(f"Runtime of the program is {(end - start) / 60} mins")
 
         return self.enc, self.scaler, model
-
 
     @staticmethod
     def get_timeseries_forecast(masterdf, target_col, timeseries_col, pred_points):
@@ -199,7 +204,7 @@ class ModelTrain:
         timeseries_key_list = masterdf[timeseries_col].unique()
         prediction = pd.DataFrame(columns=[pred_points])
         for key in timeseries_key_list:
-            print(key)
+            #print(key)
             ts_series = masterdf[masterdf[timeseries_col] == key][target_col]
             MIN_LEN = 5
             PRED_PERIOD = 5
@@ -210,7 +215,8 @@ class ModelTrain:
                 print('Failure')
             else:
                 i = 1
-                prediction = prediction.append(pd.DataFrame(pd.Series(np.nan), index=ts_series[:end_len].index, columns=[pred_points]))
+                prediction = prediction.append(
+                    pd.DataFrame(pd.Series(np.nan), index=ts_series[:end_len].index, columns=[pred_points]))
                 while i > 0:
                     train = ts_series[start_len:end_len]
                     arima_model = auto_arima(train, random_state=1, suppress_warnings=True)
@@ -222,14 +228,14 @@ class ModelTrain:
                             start_len = start_len + 5
                         end_len = end_len + PRED_PERIOD
                     else:
-                        test = ts_series[end_len-1:]
+                        test = ts_series[end_len - 1:]
                         pred = arima_model.predict(n_periods=len(test))
                         prediction = prediction.append(pd.DataFrame(pred, index=test.index, columns=[pred_points]))
                         i = 0
                 print("Success")
         end = time.time()
         # total time taken
-        print(f"Runtime of the program is {(end - start)/60} mins")
+        print(f"Runtime of the program is {(end - start) / 60} mins")
         return prediction
 
 
@@ -281,13 +287,15 @@ class ModelPredict:
         """
         # predictions_error = metrics.mean_absolute_error(masterdf[target_col].values, masterdf[pred_col].values)
         masterdf[target_col].fillna(0, inplace=True)
-        masterdf['error'] = np.where((np.isnan(masterdf[pred_col])), np.nan, abs(masterdf[target_col] - masterdf[pred_col]))
+        masterdf['error'] = np.where((np.isnan(masterdf[pred_col])), np.nan,
+                                     abs(masterdf[target_col] - masterdf[pred_col]))
         predictions_error = abs(masterdf['error']).mean()
         if groupbycol != None:
             yearly_summary = pd.DataFrame(masterdf.groupby([groupbycol])[['error']].mean()).reset_index()
         else:
             yearly_summary = None
         return predictions_error, yearly_summary
+
 
 class EnsembleModel():
 

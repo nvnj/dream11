@@ -16276,39 +16276,32 @@ matchid,playername,total_runs,total_balls_faced,total_legal_balls_faced,run_6,ru
 1216547,TA Boult,,,,,,,,,,,24.0,24.0,35.0,0.0,1st innings,Royal Challengers Bangalore,Mumbai Indians,8.75,Bowler,,,,0.0,,,0.0,0.0,0.0,0.0,0.0,,,
 1216547,Washington Sundar,,,,,,,,,,,24.0,24.0,12.0,0.0,2nd innings,Mumbai Indians,Royal Challengers Bangalore,3.0,Bowler,,,,0.0,,,6.0,0.0,0.0,6.0,6.0,,,
 1216547,YS Chahal,,,,,,,,,,,24.0,24.0,48.0,0.0,2nd innings,Mumbai Indians,Royal Challengers Bangalore,12.0,Bowler,,,,0.0,,,-6.0,0.0,0.0,-6.0,-6.0,,,
-1216548,A Mishra,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,8.5
-1216548,AR Patel,,,,,,,,,,,,,,,,,,,AllRounder,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,8.5
-1216548,I Sharma,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,8.5
-1216548,KMA Paul,,,,,,,,,,,,,,,,,,,AllRounder,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,8.0
-1216548,PP Shaw,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,8.5
-1216548,R Ashwin,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,9.0
-1216548,RR Pant,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,9.5
-1216548,S Dhawan,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,10.0
-1216548,A Rahane,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,9.0
-1216548,A Carey,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,8.5
-1216548,SO Hetmyer,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,8.5
-1216548,SS Iyer,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,9.0
-1216548,K Rabada,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,9.5
-1216548,S Lamichhane,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,8.5
-1216548,A Nortje,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,8.0
-1216548,A Khan,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,8.0
-1216548,MM Sharma,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,8.0
-1216548,HV Patel,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,8.0
-1216548,MP Stoinis,,,,,,,,,,,,,,,,,,,AllRounder,,,,,,,,,,,,Delhi Capitals,Royal Challengers Bangalore,8.5
-1216548,AB de Villiers,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,10.0
-1216548,NA Saini,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,8.0
-1216548,P Negi,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,8.0
-1216548,PA Patel,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,8.5
-1216548,UT Yadav,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,8.5
-1216548,V Kohli,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,10.5
-1216548,Washington Sundar,,,,,,,,,,,,,,,,,,,AllRounder,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,8.5
-1216548,YS Chahal,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,9.0
-1216548,AJ Finch,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,8.5
-1216548,CH Morris,,,,,,,,,,,,,,,,,,,AllRounder,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,9.5
-1216548,MM Ali,,,,,,,,,,,,,,,,,,,AllRounder,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,8.0
-1216548,S Dube,,,,,,,,,,,,,,,,,,,AllRounder,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,8.0
-1216548,A Zampa,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,8.5
-1216548,DW Steyn,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,8.5
-1216548,Devdutt Padikkal,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,9.0
-1216548,I Udana,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,8.0
-1216548,M Siraj,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Royal Challengers Bangalore,Delhi Capitals,8.0
+1216548,AT Rayudu,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,9.0
+1216548,DJ Bravo,,,,,,,,,,,,,,,,,,,AllRounder,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,10.0
+1216548,DL Chahar,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,8.5
+1216548,F du Plessis,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,9.0
+1216548,Harbhajan Singh,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,10.0
+1216548,Imran Tahir,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,9.5
+1216548,MS Dhoni,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,9.5
+1216548,RA Jadeja,,,,,,,,,,,,,,,,,,,AllRounder,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,8.5
+1216548,SK Raina,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,10.0
+1216548,SN Thakur,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,8.5
+1216548,SR Watson,,,,,,,,,,,,,,,,,,,AllRounder,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,9.5
+1216548,M Vijay,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,8.5
+1216548,KM Jadhav,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,8.5
+1216548,MJ Santner,,,,,,,,,,,,,,,,,,,AllRounder,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,8.5
+1216548,SM Curran,,,,,,,,,,,,,,,,,,,AllRounder,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,8.5
+1216548,PP Chawla,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,8.5
+1216548,L Ngidi,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,8.5
+1216548,KV Sharma,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Chennai Super Kings,Kolkata Knight Riders,8.0
+1216548,Shubman Gill,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Kolkata Knight Riders,Chennai Super Kings,10.0
+1216548,SP Narine,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Kolkata Knight Riders,Chennai Super Kings,10.0
+1216548,KD Karthik,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Kolkata Knight Riders,Chennai Super Kings,10.0
+1216548,N Rana,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Kolkata Knight Riders,Chennai Super Kings,10.0
+1216548,EJG Morgan,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Kolkata Knight Riders,Chennai Super Kings,10.0
+1216548,AD Russell,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Kolkata Knight Riders,Chennai Super Kings,10.0
+1216548,NS Naik,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Kolkata Knight Riders,Chennai Super Kings,10.0
+1216548,PJ Cummins,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Kolkata Knight Riders,Chennai Super Kings,10.0
+1216548,Shivam Mavi,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Kolkata Knight Riders,Chennai Super Kings,10.0
+1216548,Kuldeep Yadav,,,,,,,,,,,,,,,,,,,Batsmen,,,,,,,,,,,,Kolkata Knight Riders,Chennai Super Kings,10.0
+1216548,Sandeep Warrier,,,,,,,,,,,,,,,,,,,Bowler,,,,,,,,,,,,Kolkata Knight Riders,Chennai Super Kings,10.0

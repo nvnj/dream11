@@ -87,7 +87,7 @@ if __name__ == "__main__":
     target_col = 'total_points'
     pred_col = 'pred_points'
 
-    modelname = 'rf'  # Options include 'rf','xgb','catboost','movingaverage', 'ensemble'
+    modelname = 'catboost'  # Options include 'rf','xgb','catboost','movingaverage', 'ensemble'
     matchdatascorecardpath = r'Data/ipl_scorecard_points.csv'
     matchdatascorecardpathipl20 = r'ipl20/ipl_scorecard_points_ipl20.csv'
     featenggpath = r'Data/ipl_scorecard_points_featengg.csv'
@@ -132,9 +132,9 @@ if __name__ == "__main__":
                 'yearlrewardspath': yearlyrewardspath}
 
     #  to run the training of the models part of the permissible list
-    TRAIN_MODEL = False
+    TRAIN_MODEL = True
     # e to run the prediction on the entire training dataset we have
-    PREDICT_MODEL = True
+    PREDICT_MODEL = False
     #  to run the training for an ensemble model using predicitons from other model
     PREDICT_ENSEMBLE = False
     #  to create the dataframe of the upcoming match and adjust anything if required
@@ -199,7 +199,7 @@ if __name__ == "__main__":
         finalteam = pd.DataFrame()
         predcol_list = []
         print("Calculation for best XI started")
-        for modelname in ['catboost', 'xgb', 'rf', 'movingaverage', 'ensemble']:
+        for modelname in ['catboost']:
             modelpath = r"Data/" + modelname + "_model.pkl"
             encoderpath = r"Data/OnHotEncoder_" + modelname + ".pkl"
             datapath['modelpath'] = modelpath
