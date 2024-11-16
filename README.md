@@ -5,7 +5,7 @@ Aim is to select the team that would get the maximum total points in an IPL matc
 
 ## How to Run ?
 Clone the repo to your local and run the controller.py file. It will automatically generate the best 11 based on multiple models into a file pred_team11.csv within Data/ folder. If run after the squad is announced for the match and before the match starts, it will slect the best XI from the current playing squad otherwise will refer to older matches to get the playing XI. The dataset Data/ipl_squad_points.csv has the details for ipl 2020 regarding players role and cost as per dream11. 
-For any clarification please drop a note at abhishek.anand374@gmail.com. Will try to respond as soon as possible.
+
 
 ## Dataset Descriptions
 Data/pred_team11.csv - result file with the best XI from the playing for the match to be played next
